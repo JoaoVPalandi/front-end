@@ -1,30 +1,28 @@
 function pagina(){
-
-    const body = document.body;
     
-    const div = document.createElement('div');
-    div.classList.add('container');
-    body.appendChild(div);
-
+    const div = document.querySelector('.container');
+    
     const titulo = document.createElement('h2');
     titulo.textContent = "Lista de Tarefas";
     div.appendChild(titulo);
-
+    
     const input = document.createElement('input');
     input.id = 'tarefaInput';
     input.type = 'text';
     input.placeholder = 'Digite uma tarefa';
     div.appendChild(input);
+    
 
     const botao = document.createElement('button');
     botao.textContent = 'Adicionar Tarefa';
     botao.id = 'btnAdicionar';
     div.appendChild(botao);
     
+
     const lista = document.createElement('ul');
     lista.id = 'listaTarefas';
     div.appendChild(lista);
-
+    
     
 
 
