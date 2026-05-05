@@ -28,13 +28,15 @@ botao.addEventListener("click", () => {
     enviarImagemParaServidor(imageDataURL);
 });
 
-function enviarImagemParaServidor(imageDataURL){
+function enviarImagemParaServidor(imageDataURL) {
     //simular o envio  salvando o dado no próprio computador
     console.log('enviando imagem para o servidor...');
 
-    fetch('/', {
-        method: POST,
-        body: JSON.stringify({image: imageDataURL}),
+    const base64String = imageDataURL.split(',')[1];
+
+    fetch('http://dop3080-1247456:8000/images', {
+        method: "POST",
+        body: JSON.stringify({ image: base64String, mime_type: 'image/png' }),
         headers: {
             'Content-type': 'application/json'
         }
